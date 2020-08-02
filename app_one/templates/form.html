@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Busqueda</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <center>
+        <div id="cuadro">
+            {% csrf_token %}
+
+            <p>Buscar profesor</p>
+            <form action = "/busqueda_profesor/" method="GET" >
+                <input type="text" name="profesor">
+                <input type="submit" class="button" value="Buscar">
+            </form>
+
+            <p>Buscar estudiante</p>
+            <form action="/busqueda_estudiante/" method="GET">
+                <input type="text" name="estudiante">
+                <input type="submit" class="button" value="Buscar">
+            </form>
+
+        </div>
+    </center>
+    
+</body>
+</html>

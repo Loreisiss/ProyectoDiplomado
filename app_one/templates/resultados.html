@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de la consulta</title>
+</head>
+<body>
+    <p>Usted ha mandado a buscar: '{{busqueda}}'</p>
+    {% if personas %}
+        <p>Elementos encontrados: {{personas|length}}</p>
+        <ul>
+            {%for persona in personas %}
+            <hr>
+            <li>
+                <p>Estudiante: {{persona.Nombre_y_apellido}}</p>
+            </li>
+            <li>
+                <p>Promedio: {{persona.Promedio}}</p>
+            </li>
+            <li>
+                <p>Carrera: {{persona.Carrera}}</p>
+            </li>
+            <li>
+                <p>Genero: {{persona.sexo}} </p>
+            </li>
+            <li>
+                <p>Semestres cursados: {{persona.Semestres_cursados}}</p> 
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No existe en la base de datos </p>
+    {% endif %}
+</body>
+</html>
